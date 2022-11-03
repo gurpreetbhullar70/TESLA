@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json())
 
 app.use((req, res, next)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*'),
+    res.setHeader('Acce ss-Control-Allow-Origin', '*'),
     res.setHeader('Access-Control-Allow-Headers', '*'),
     next()
 })
@@ -21,7 +21,7 @@ mongoose.connect(connection_url)
 
 app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
 
-app.get('/',(req,res)=>{ 
+app.get('/v2/posts',(req,res)=>{ 
     Videos.find({}, (err, data)=>{
         if(err){
             res.status(500).send(err)
@@ -33,7 +33,7 @@ app.get('/',(req,res)=>{
 
 
 
-app.post('/',(req,res)=>{
+app.post('/v2/posts',(req,res)=>{
     const dbVideos = req.body;
 
     Videos.create(dbVideos,(err, data)=>{
