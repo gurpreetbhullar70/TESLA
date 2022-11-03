@@ -18,14 +18,14 @@ const connection_url = "mongodb+srv://preet:44gUrpreet@cluster0.ykjajgf.mongodb.
 mongoose.connect(connection_url)
 
 
- app.get('/',(req,res)=>res.status(200).send('hello'))
+//  app.get('/',(req,res)=>res.status(200).send('hello'))
 
 
 app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
 
 
 
-app.get('/v2/posts',(req,res)=>{ 
+app.get('/',(req,res)=>{ 
     Videos.find({}, (err, data)=>{
         if(err){
             res.status(500).send(err)
@@ -35,7 +35,7 @@ app.get('/v2/posts',(req,res)=>{
     })
 })
 
-app.post('/v2/posts',(req,res)=>{
+app.post('/',(req,res)=>{
     const dbVideos = req.body;
 
     Videos.create(dbVideos,(err, data)=>{
