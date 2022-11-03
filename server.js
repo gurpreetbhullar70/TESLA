@@ -4,7 +4,7 @@ import Data from './data.js';
 import Videos from './dbModel.js'
 
 
-const port = process.env.PORT || 9000;
+const PORT = process.env.PORT || 9000;
 const app = express();
 app.use(express.json())
 
@@ -47,4 +47,4 @@ app.post('/v2/posts',(req,res)=>{
 })
 
 
-app.listen(port,()=>console.log(`listening on localhost:${port}`))
+app.listen(PORT,()=>console.log(`listening on localhost:${PORT}`))
