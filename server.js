@@ -19,7 +19,6 @@ mongoose.connect(connection_url)
 
 //  app.get('/',(req,res)=>res.status(200).send('hello'))
 
-
 app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
 
 
