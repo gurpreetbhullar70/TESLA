@@ -1,4 +1,4 @@
-import express, { json }  from 'express';
+import express from 'express';
 import mongoose from 'mongoose';
 import Data from './data.js';
 import Videos from './dbModel.js'
@@ -8,11 +8,11 @@ const PORT = process.env.PORT || 9000;
 const app = express();
 app.use(express.json())
 
-// app.use((req, res, next)=>{
-//     res.setHeader('Access-Control-Allow-Origin', '*'),
-//     res.setHeader('Access-Control-Allow-Headers', '*'),
-//     next()
-// })
+app.use((req, res, next)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*'),
+    res.setHeader('Access-Control-Allow-Headers', '*'),
+    next()
+})
 const connection_url = "mongodb+srv://preet:44gUrpreet@cluster0.ykjajgf.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(connection_url)
