@@ -1,6 +1,6 @@
 import express, { json }  from 'express';
 import mongoose from 'mongoose';
-import data from './data.js';
+import Data from './data.js';
 import Videos from './dbModel.js'
 
 
@@ -21,7 +21,7 @@ mongoose.connect(connection_url)
 // app.get('/',(req,res)=>res.status(200).send('hello'))
 
 
-app.get('/v1/posts',(req,res)=>res.status(200).send(data))
+app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
 
 
 app.get('/v2/posts',(req,res)=>{ 
