@@ -10,6 +10,7 @@ app.use(express.json())
 
 
 
+
 app.use((req, res, next)=>{
     res.setHeader('Acce ss-Control-Allow-Origin', '*'),
     res.setHeader('Access-Control-Allow-Headers', '*'),
