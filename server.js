@@ -8,17 +8,17 @@ const PORT = process.env.PORT || 9000;
 const app = express();
 app.use(express.json())
 
-app.use((req, res, next)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*'),
-    res.setHeader('Access-Control-Allow-Headers', '*'),
-    next()
-})
+// app.use((req, res, next)=>{
+//     res.setHeader('Access-Control-Allow-Origin', '*'),
+//     res.setHeader('Access-Control-Allow-Headers', '*'),
+//     next()
+// })
 const connection_url = "mongodb+srv://preet:44gUrpreet@cluster0.ykjajgf.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(connection_url)
 
 
- app.get('/',(req,res)=>res.status(200).send('hello'))
+//  app.get('/',(req,res)=>res.status(200).send('hello'))
 
 
 app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
