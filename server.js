@@ -17,7 +17,7 @@ const connection_url = "mongodb+srv://preet:44gUrpreet@cluster0.ykjajgf.mongodb.
 
 mongoose.connect(connection_url)
 
-//  app.get('/',(req,res)=>res.status(200).send('hello'))
+app.get('/',(req,res)=>res.status(200).send('hello'))
 
 app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
 
