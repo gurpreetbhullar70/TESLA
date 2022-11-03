@@ -16,7 +16,6 @@ app.use((req, res, next)=>{
 })
 const connection_url = "mongodb+srv://preet:44gUrpreet@cluster0.ykjajgf.mongodb.net/?retryWrites=true&w=majority";
 
-
 mongoose.connect(connection_url)
 
 
