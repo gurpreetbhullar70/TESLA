@@ -1,18 +1,17 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Data from './data.js';
+import data from './data.js';
 import Videos from './dbModel.js'
 
 
-const port = process.env.PORT || 9000;
+const PORT = process.env.PORT || 9000;
 const app = express();
 app.use(express.json())
 
 
 
-
 app.use((req, res, next)=>{
-    res.setHeader('Acce ss-Control-Allow-Origin', '*'),
+    res.setHeader('Access-Control-Allow-Origin', '*'),
     res.setHeader('Access-Control-Allow-Headers', '*'),
     next()
 })
@@ -22,7 +21,7 @@ mongoose.connect(connection_url)
 
 app.get('/',(req,res)=>res.status(200).send('hello'))
 
-app.get('/v1/posts',(req,res)=>res.status(200).send(Data))
+app.get('/v1/posts',(req,res)=>res.status(200).send(data))
 
 app.get('/v2/posts',(req,res)=>{ 
     Videos.find({}, (err, data)=>{
@@ -49,4 +48,4 @@ app.post('/v2/posts',(req,res)=>{
 })
 
 
-app.listen(port,()=>console.log(`listening on localhost:${port}`))
+app.listen(PORT,()=>console.log(`listening on localhost:${PORT}`))
